@@ -9,6 +9,10 @@ import { useDispatch } from 'react-redux'
 import type { AppDispatch } from './state/store'
 import { supabase } from './supabaseClient'
 import { setSession } from './state/Session/sessionSlice'
+import Update from './pages/Update'
+import Create from './pages/Create'
+import PageNotFound from './pages/PageNotFound'
+import Item from './pages/Item'
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
@@ -31,6 +35,10 @@ function App() {
             <Dashboard/>
           </PrivateRoute>
         }/>
+        <Route path='/update/:id' element={<Update/>}/>
+        <Route path='/create' element={<Create/>}/>
+        <Route path='/:id' element={<Item/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
       </Routes>
     </BrowserRouter>
   )
