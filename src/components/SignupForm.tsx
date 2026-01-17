@@ -56,10 +56,11 @@ const SignupForm = () => {
                 <label htmlFor="password" className="font-bold">Password:</label>
                 <input type="password" name="password" placeholder="*******" className="border border-gray-500 p-3 rounded" />
             </div>
-            <button className="bg-green-500 p-2 rounded font-bold text-white -translate-y-0.25 hover:translate-none cursor-pointer duration-300">Signup</button>
             {errs && (
                 <p>{errs}</p>
             )}
+            <button className="bg-green-500 p-2 rounded font-bold text-white -translate-y-0.25 hover:translate-none cursor-pointer duration-300">Signup</button>
+            <p>Already have an account? <a href="/" className="text-blue-500">Login</a></p>
         </form>
     );
 }
