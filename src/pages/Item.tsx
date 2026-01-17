@@ -12,7 +12,7 @@ export type fetchedData = {
 
 const Item = () => {
     const { id } = useParams();
-    const [data, setData] = useState<fetchedData | {}>({});
+    const [data, setData] = useState<fetchedData>({id: 0, title: "", method: "", ratings: 0});
     const navigate = useNavigate()
 
     useEffect(() => {

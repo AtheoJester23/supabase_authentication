@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { supabase } from "../supabaseClient";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../state/store";
 import { setSession } from "../state/Session/sessionSlice";
@@ -57,6 +57,7 @@ const SigninForm = () => {
                 <input type="password" name="password" placeholder="*******" className="border border-gray-500 p-3 rounded" />
             </div>
             <button className="bg-green-500 p-2 rounded font-bold text-white -translate-y-0.25 hover:translate-none cursor-pointer duration-300">Signup</button>
+            <p>Don't have an account? <Link to="/Signup" className="text-blue-500">Sign up</Link></p>
         </form>
     );
 }
