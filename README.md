@@ -8,13 +8,13 @@ This project is maintained for personal reference and focuses on reviewing funda
 - Serve as a quick lookup for Supabase usage  
 - Act as a lightweight learning reference  
 
----
+<br/>
 
 ## ⏳ TL;DR
 
 <h3 align="center">CRUD</h3>
 
-### 🟢 **CREATE request**
+### 🟢 **CREATE/POST request**
 ```js
 await supabase.from('tableName').insert({ key: value, key: value, etc: "..." })
 ```
@@ -36,4 +36,17 @@ await supabase.from('tableName').update({ key: value, etc: "..." }).eq("id", id)
 ### 🔴 DELETE request
 ```js
 await supabase.from('tableName').delete().eq("id", id)
+```
+##
+
+<h3 align="center">Authentication Flows</h3>
+
+### 👤 User Sign-up:
+```js
+await supabase.auth.signUp({email, password})
+```
+
+### 🚪 User Sign-in:
+```js
+await supabase.auth.signInWithPassword({email, password});
 ```
