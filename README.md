@@ -50,3 +50,17 @@ await supabase.auth.signUp({email, password})
 ```js
 await supabase.auth.signInWithPassword({email, password});
 ```
+
+### ↪ Logout:
+```js
+await supabase.auth.signOut();
+```
+
+### 🔒 Protected Route:
+```js
+const {data: session} = await supabase.auth.session()
+
+if(!session){
+  navigate("/")
+}
+```
